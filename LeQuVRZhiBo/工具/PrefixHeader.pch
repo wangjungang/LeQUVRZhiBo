@@ -1,0 +1,63 @@
+//
+//  PrefixHeader.pch
+//  LeQuVRZhiBo
+//
+//  Created by lhb on 16/11/8.
+//  Copyright © 2016年 lhb. All rights reserved.
+//
+
+#import <Availability.h>
+
+#ifndef __IPHONE_7_0
+#warning "This project uses features only available in iOS SDK 7.0 and later."
+#endif
+
+#ifdef __OBJC__
+
+#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+#import "UIView+Extension.h"
+#import "UIViewController+Back.h"
+#import "UIView+Extension.h"
+#import "HeaderUrl_zhuang.h"
+#ifdef DEBUG // 处于开发阶段
+#define MyLog(...) NSLog(__VA_ARGS__)
+#else // 处于发布阶段
+#define MyLog(...)
+#endif
+#import "UIColor+WJColor.h"
+#import "UIImage+Extension.h"
+#import "UIView+Extension.h"
+#import "UIBarButtonItem+Extension.h"
+#import "NSObject+HUD.h"
+#import "MBProgressHUD.h"
+#import "YString+Ext.h"
+#import "AFManager.h"
+#import "HeaderPath.h"
+#import "UIImageView+AFNetworking.h"
+#import "HeaderwangPath.h"
+#import "AFHTTPSessionManager.h"
+#import "MPAvatarBrowser.h"
+#import "zhiboingViewController.h"
+#import "SmallVideoController.h"
+// RGB颜色
+#define RGBColor(r, g, b) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:1.0]
+
+// 随机色
+#define RandomColor RGBColor(arc4random_uniform(256), arc4random_uniform(256), arc4random_uniform(256))
+#define WJScreenW [UIScreen mainScreen].bounds.size.width
+#define WJScreenH [UIScreen mainScreen].bounds.size.height
+#define CEHUWIDTH self.view.frame.size.width/4*3
+
+#define WIDTH self.view.frame.size.width
+
+#define HEIGHT self.view.frame.size.height
+//ucloud
+#define AccessKey @"publish3-key"
+
+//推流地址
+#define RecordDomain(id) [NSString stringWithFormat:@"rtmp://publish3.cdn.ucloud.com.cn/ucloud/%@", id];
+//播放
+#define PlayDomain(id) [NSString stringWithFormat:@"http://vlive3.rtmp.cdn.ucloud.com.cn/ucloud/%@.flv", id]
+#define USERDEFAULT [NSUserDefaults standardUserDefaults]
+#endif
